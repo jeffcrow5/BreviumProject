@@ -18,4 +18,44 @@ public class AppointmentRequest {
         this.preferredDocs = appointmentRequest.preferredDocs;
         this.isNew = appointmentRequest.isNew;
     }
+
+    public int getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(int requestId) {
+        this.requestId = requestId;
+    }
+
+    public int getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(int personId) {
+        this.personId = personId;
+    }
+
+    public String[] getPreferredDays() {
+        return preferredDays;
+    }
+
+    public void setPreferredDays(String[] preferredDays) {
+        this.preferredDays = preferredDays;
+    }
+
+    public int[] getPreferredDocs() {
+        return preferredDocs;
+    }
+
+    public void setPreferredDocs(int[] preferredDocs) {
+        this.preferredDocs = preferredDocs;
+    }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public void setNew(boolean isNew) {
+        this.isNew = isNew;
+    }
 }

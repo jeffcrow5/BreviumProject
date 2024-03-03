@@ -14,6 +14,11 @@ public class WebClient {
     private WebClient() {
     }
 
+    /**
+     * Gets the instance of the WebClient
+     *
+     * @return The instance of the WebClient
+     */
     public static WebClient getInstance() {
         if (instance == null) {
             instance = new WebClient();
@@ -21,6 +26,13 @@ public class WebClient {
         return instance;
     }
 
+    /**
+     * Sends a GET request to the API
+     *
+     * @param endpoint The endpoint to send the request to
+     * @return The response from the API
+     * @throws IOException If an error occurs while sending the request
+     */
     public String sendGetRequest(String endpoint) throws IOException {
         HttpURLConnection connection = null;
         BufferedReader reader = null;
@@ -33,6 +45,11 @@ public class WebClient {
             // Open connection
             connection = (HttpURLConnection) apiUrl.openConnection();
             connection.setRequestMethod("GET");
+
+            // If response code is 204, return empty string
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_NO_CONTENT) {
+                return "";
+            }
 
             // Get the response
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -57,6 +74,14 @@ public class WebClient {
         return response.toString();
     }
 
+    /**
+     * Sends a POST request to the API
+     *
+     * @param endpoint The endpoint to send the request to
+     * @param body The body of the request
+     * @return The response from the API
+     * @throws IOException If an error occurs while sending the request
+     */
     public String sendPostRequest(String endpoint, String body) throws IOException {
         HttpURLConnection connection = null;
         try {

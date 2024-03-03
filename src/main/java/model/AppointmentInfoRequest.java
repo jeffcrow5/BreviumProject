@@ -1,18 +1,17 @@
 package model;
 
-public class AppointmentInfoRequest {
-    int doctorId;
-    int personId;
-    String appointmentTime;
-    boolean isNewPatientAppointment;
-    int requestId;
+import java.util.concurrent.atomic.AtomicInteger;
 
-    public AppointmentInfoRequest(int doctorId, int personId, String appointmentTime, boolean isNewPatientAppointment, int requestId) {
-        this.doctorId = doctorId;
-        this.personId = personId;
-        this.appointmentTime = appointmentTime;
-        this.isNewPatientAppointment = isNewPatientAppointment;
-        this.requestId = requestId;
+public class AppointmentInfoRequest {
+    private static final AtomicInteger counter = new AtomicInteger(1);
+    private int doctorId;
+    private int personId;
+    private String appointmentTime; // Datetime string
+    private boolean isNewPatientAppointment;
+    private final int requestId;
+
+    public AppointmentInfoRequest() {
+        this.requestId = counter.getAndIncrement();
     }
 
     public int getDoctorId() {
@@ -49,9 +48,5 @@ public class AppointmentInfoRequest {
 
     public int getRequestId() {
         return requestId;
-    }
-
-    public void setRequestId(int requestId) {
-        this.requestId = requestId;
     }
 }
