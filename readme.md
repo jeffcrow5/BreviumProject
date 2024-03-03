@@ -16,3 +16,8 @@ The following steps will allow you to run the project:
 4. Run the main (SchedulingApp) class.
 
 The project will then run and output the results to the console.
+
+## Notes
+- I was unfortunately not able to completely finish this project before hitting 3 hours. I was able to get the initial schedule and the requests for appointments, but I was not able to finish the logic for scheduling appointments. I believe I was close to getting it done, but I was not able to finish it in time. I also did not have time to write tests for the project, which I would have liked to do. I would have used JUnit for the tests. I would have also finished the JavaDocs for the project, as I was not able to finish those either.
+- A note about timing... You'll see that my initial commit was well before my other commits. Something came up at home that I had to take care of and which ended up taking a few hours to resolve. My total time remains under 3 hours, but I wanted to make sure you knew why there was a gap in my commits.
+- There are several changes that would like to make to this project if given more time, after getting the logic to actually work, of course. If given the chance, I can talk about that with you if you end up liking my work and would like to talk more.
